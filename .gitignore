@@ -1,0 +1,3 @@
+jellyfin/data/
+*.key
+rclone.conf
