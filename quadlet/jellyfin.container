@@ -8,8 +8,8 @@ Image=docker.io/jellyfin/jellyfin:10.10.3
 ContainerName=jellyfin
 Environment=TZ=Asia/Kolkata
 PublishPort=127.0.0.1:8096:8096
-Volume=/home/abhay/homelab/jellyfin/data/config:/config:Z
-Volume=/home/abhay/homelab/jellyfin/data/cache:/cache:Z
+Volume=/home/abhay/homelab-one/jellyfin/data/config:/config:Z
+Volume=/home/abhay/homelab-one/jellyfin/data/cache:/cache:Z
 Volume=/mnt/homelab/media:/media:ro,rslave
 NoNewPrivileges=true
 

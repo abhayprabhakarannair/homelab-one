@@ -34,7 +34,7 @@ systemctl --user daemon-reload
 systemctl --user enable --now rclone-homelab.service
 for _ in $(seq 1 15); do mountpoint -q /mnt/homelab && break; sleep 1; done
 mountpoint -q /mnt/homelab || { echo "mount failed: journalctl --user -u rclone-homelab"; exit 1; }
-systemctl --user enable --now jellyfin.service
+systemctl --user start jellyfin.service
 
 # 6. Caddy (system service, needs root for /etc)
 sudo ln -sfn "$REPO/caddy/Caddyfile" /etc/caddy/Caddyfile
