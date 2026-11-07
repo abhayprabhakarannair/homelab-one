@@ -4,10 +4,13 @@ jellyfin.iamabhay.fyi {
 }
 
 cockpit.iamabhay.fyi {
-    encode zstd gzip
-    reverse_proxy https://127.0.0.1:9090 {
-        transport http {
-            tls_insecure_skip_verify
+    @tailnet remote_ip 100.64.0.0/10
+    handle @tailnet {
+        reverse_proxy https://127.0.0.1:9090 {
+            transport http {
+                tls_insecure_skip_verify
+            }
         }
     }
+    respond 403
 }
