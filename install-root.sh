@@ -5,7 +5,7 @@ set -euo pipefail
 
 REPO="/home/abhay/homelab-one"
 loginctl enable-linger abhay
-ln -sfn "$REPO/caddy/Caddyfile" /etc/caddy/Caddyfile
+install -m 644 "$REPO/caddy/Caddyfile" /etc/caddy/Caddyfile
 systemctl enable --now caddy
 systemctl reload caddy
 echo "root setup done"
